@@ -1,11 +1,12 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import { Container, Space, Title } from '@mantine/core';
+import TranscriptionControls from '../components/Transcription/TranscriptionControls';
 
 export default function HomePage() {
   return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
+    <Container>
+      <Title>Whisper Web UI / GUI transcription tool</Title>
+      <Space h="md" />
+      <TranscriptionControls />
+    </Container>
   );
 }
