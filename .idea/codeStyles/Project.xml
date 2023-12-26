@@ -1,0 +1,11 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <JSCodeStyleSettings version="0">
+      <option name="JSX_ATTRIBUTE_VALUE" value="None" />
+      <option name="USE_PATH_MAPPING" value="NEVER" />
+    </JSCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="USE_PATH_MAPPING" value="NEVER" />
+    </TypeScriptCodeStyleSettings>
+  </code_scheme>
+</component>
