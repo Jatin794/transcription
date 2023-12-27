@@ -4,8 +4,9 @@ import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Whisper Transcription & Dictation Web UI: Speech-to-Text Tool',
+  description:
+    'Open source OpenAI Whisper-based transcription front-end. We transcribe text recorded in your browser or from an uploaded audio file using your API key.',
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -14,10 +15,7 @@ export default function RootLayout({ children }: { children: any }) {
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
-        />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </head>
       <body>
         <MantineProvider theme={theme}>{children}</MantineProvider>

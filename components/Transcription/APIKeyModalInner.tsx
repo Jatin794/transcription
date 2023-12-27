@@ -18,8 +18,8 @@ export interface APIKeyModalInnerProps {
   /** Whether the modal is open */
   opened: boolean;
   onClose: () => unknown;
-  apiKey: string;
-  onAPIKeyChange: (apiKey: string) => unknown;
+  apiKey: string | null;
+  onAPIKeyChange: (apiKey: string | null) => unknown;
 
   /**
    * Pass true if we opened the API key modal automatically, in which case
@@ -32,13 +32,13 @@ export interface APIKeyModalInnerProps {
  * Modal that lets someone set their API key for transcription
  */
 const APIKeyModalInner: React.FunctionComponent<APIKeyModalInnerProps> = React.memo(
-  (props: PropsWithChildren<APIKeyModalInnerProps>) => {
+  function APIKeyModalInner(props: PropsWithChildren<APIKeyModalInnerProps>) {
     const { opened, onClose: onCloseInternal, onAPIKeyChange, showAPIKeyNeededAlert } = props;
     const [apiKey, setAPIKey] = useStateFromProp(props.apiKey);
 
     const handleSubmit = useMemoizedCallback((event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      onAPIKeyChange(apiKey);
+      onAPIKeyChange(apiKey || null);
     }, []);
 
     const handleClose = useMemoizedCallback(() => {
@@ -65,7 +65,7 @@ const APIKeyModalInner: React.FunctionComponent<APIKeyModalInnerProps> = React.m
           <PasswordInput
             label="OpenAI API Key"
             placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            value={apiKey}
+            value={apiKey ?? ''}
             onChange={useUpdateFromEvent(setAPIKey)}
             formNoValidate
           />

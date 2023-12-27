@@ -24,7 +24,7 @@ export interface AudioRecorderInnerProps
  * Custom audio recorder interface that wraps around
  */
 const AudioRecorderInner: React.FunctionComponent<AudioRecorderInnerProps> = React.memo(
-  (props: PropsWithChildren<AudioRecorderInnerProps>) => {
+  function AudioRecorderInner(props: PropsWithChildren<AudioRecorderInnerProps>) {
     const {
       initializationError,
       isRecording,

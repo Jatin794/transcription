@@ -4,9 +4,9 @@ import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { useAudioRecorder } from 'react-audio-voice-recorder';
 import { useMemoizedCallback } from '../hooks/useMemoizedCallback';
 import AudioRecorderInner from './AudioRecorderInner';
-import { getOpenAIAPIKeyFromLocalStorage } from '../libs/localStorage';
 import APIKeyModal from './APIKeyModal';
 import { useSetState } from '../libs/useSetState';
+import { useOpenAIAPIKeySetterAndGetter } from '../libs/localStorage';
 
 export interface AudioRecorderProps {
   onRecordingComplete: (blob: Blob, seconds: number) => unknown;
@@ -24,7 +24,7 @@ enum ShowAPIKeyModalReason {
  * library interface
  */
 const AudioRecorder: React.FunctionComponent<AudioRecorderProps> = React.memo(
-  (props: PropsWithChildren<AudioRecorderProps>) => {
+  function AudioRecorder(props: PropsWithChildren<AudioRecorderProps>) {
     const { onRecordingComplete } = props;
     const [initializationError, setInitializationError] = useState<string | null>(null);
 
@@ -69,8 +69,8 @@ const AudioRecorder: React.FunctionComponent<AudioRecorderProps> = React.memo(
       ShowAPIKeyModalReason.clickedSettingsButton
     );
 
+    const { apiKey } = useOpenAIAPIKeySetterAndGetter();
     const handleStartRecording = useMemoizedCallback(() => {
-      const apiKey = getOpenAIAPIKeyFromLocalStorage();
       if (!apiKey) setShowAPIKeyModalReason(ShowAPIKeyModalReason.missingAPIKey);
       else startRecording();
     }, []);

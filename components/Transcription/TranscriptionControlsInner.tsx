@@ -33,7 +33,9 @@ export interface TranscriptionControlsInnerProps {
  * in transcription
  */
 const TranscriptionControlsInner: React.FunctionComponent<TranscriptionControlsInnerProps> =
-  React.memo((props: PropsWithChildren<TranscriptionControlsInnerProps>) => {
+  React.memo(function TranscriptionControlsInner(
+    props: PropsWithChildren<TranscriptionControlsInnerProps>
+  ) {
     const {
       transcribingAudioSeconds,
       transcribedText,
