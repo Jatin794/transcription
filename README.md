@@ -1,37 +1,36 @@
-# Mantine Next.js template
+# Transcription: a Whisper speech-to-text web UI
 
-This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/).
-If you want to use pages router instead, see [next-pages-template](https://github.com/mantinedev/next-pages-template).
+This is the open-source code that powers the Whisper Web UI at https://whisperwebui.com.
 
 ## Features
 
-This template comes with the following features:
+- [X] Transcribe audio recorded in the browser using the OpenAI Whisper API using your API keys.
+- [ ] Transcribe audio in files on your local computer.
+- [ ] Try out multiple speech-to-text APIs.
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+## Developing
 
-## npm scripts
+You can help improve the website by contributing! Here are the easy ways to run this server.
 
 ### Build and dev scripts
 
 - `dev` – start dev server
 - `build` – bundle application for production
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+- `analyze` – analyzes application bundle
+  with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
 
 ### Testing scripts
 
 - `typecheck` – checks TypeScript types
 - `lint` – runs ESLint
 - `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
 
 ### Other scripts
 
 - `storybook` – starts storybook dev server
 - `storybook:build` – build production storybook bundle to `storybook-static`
 - `prettier:write` – formats all files with Prettier
+
+## License
+
+All code is licensed under the [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-only.html)

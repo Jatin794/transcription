@@ -1,5 +1,15 @@
 import React from 'react';
-import { Anchor, Container, List, ListItem, Divider, Space, Title, Paper } from '@mantine/core';
+import {
+  Anchor,
+  Container,
+  List,
+  ListItem,
+  Divider,
+  Space,
+  Title,
+  Paper,
+  Text,
+} from '@mantine/core';
 import TranscriptionControls from '../components/Transcription/TranscriptionControls';
 import Paragraph from '../components/DesignSystem/Paragraph';
 
@@ -82,7 +92,7 @@ const HomePage: React.FunctionComponent<HomePageProps> = React.memo(function Hom
         adaptability across various speech patterns. With a significant amount of non-English data,
         it excels in translating speech to text, surpassing other top models. It aims to be an
         easy-to-use, highly accurate tool for developers to add voice features to a wide range of
-        applications. You can read more about Whisper on OpenAI’s website:
+        applications. You can read more about Whisper on OpenAI’s website:{' '}
         <Anchor href="https://openai.com/research/whisper" target="_blank">
           https://openai.com/research/whisper
         </Anchor>
@@ -128,6 +138,12 @@ const HomePage: React.FunctionComponent<HomePageProps> = React.memo(function Hom
         </ListItem>
         <ListItem>Rank APIs based on perceived quality.</ListItem>
       </List>
+
+      <Divider my="md" />
+
+      <Text ta="center">
+        <Anchor href="https://github.com/pxpeterxu/transcription">Code on GitHub</Anchor>
+      </Text>
     </Container>
   );
 });
