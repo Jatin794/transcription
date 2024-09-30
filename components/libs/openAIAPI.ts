@@ -14,7 +14,7 @@ export async function transcribeAudio(
   formData.set('model', 'whisper-1');
 
   const result = await axios({
-    url: 'https://api.openai.com/v1/audio/transcriptions',
+    url: 'https://api.zukijourney.com/v1/audio/transcriptions',
     headers: {
       Authorization: `Bearer ${apiToken}`,
     },
